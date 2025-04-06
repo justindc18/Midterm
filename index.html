@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Drawing Tools Online Store - High-quality art supplies delivered to your doorstep.">
+  <title>Drawing Tools Online Store</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Drawing Tools Online Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section id="hero" class="bg-primary text-white text-center py-5">
+    <h1>Welcome to the Drawing Tools Online Store!</h1>
+    <p>Your one-stop shop for premium drawing tools and supplies. Browse our wide selection of art materials.</p>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section id="products" class="container my-5">
+    <h2>Featured Products</h2>
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://images.ctfassets.net/f1fikihmjtrp/6ATHjUkrvbX9lQkdrdoIK9/28eab3f94b19d9c8756906cd9f63bfdf/22220-2009-5-4ww.jpg?q=80&w=500&h=500&fit=pad"
+            class="card-img-top" alt="Pencil" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Pencil</h5>
+            <p class="card-text">₱50.00</p>
+            <a href="product.html?id=pencil" class="btn btn-info">View Description</a>
+            <button class="btn btn-success mt-2"
+              onclick="addToCart('pencil', 'Pencil', 50, 'https://images.ctfassets.net/f1fikihmjtrp/6ATHjUkrvbX9lQkdrdoIK9/28eab3f94b19d9c8756906cd9f63bfdf/22220-2009-5-4ww.jpg?q=80&w=500&h=500&fit=pad')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://i5.walmartimages.com/seo/Best-Choice-Products-Set-of-228-Alcohol-Based-Markers-Dual-Tipped-Pens-w-Brush-Chisel-Tip-Carrying-Case-Black_731be2d0-b845-4b98-a4dc-4794cd580538.28f405136692d3a0913c6a3c31001f9b.jpeg"
+            class="card-img-top" alt="Marker" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Marker</h5>
+            <p class="card-text">₱100.00</p>
+            <a href="product.html?id=marker" class="btn btn-info">View Description</a>
+            <button class="btn btn-success mt-2"
+              onclick="addToCart('marker', 'Marker', 100, 'https://i5.walmartimages.com/seo/Best-Choice-Products-Set-of-228-Alcohol-Based-Markers-Dual-Tipped-Pens-w-Brush-Chisel-Tip-Carrying-Case-Black_731be2d0-b845-4b98-a4dc-4794cd580538.28f405136692d3a0913c6a3c31001f9b.jpeg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://nicpro.com/cdn/shop/products/1_3aecae74-9b76-4c4d-9470-4b0b5672a8b4.jpg?v=1624517783"
+            class="card-img-top" alt="Paint" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Paint</h5>
+            <p class="card-text">₱200.00</p>
+            <a href="product.html?id=paint" class="btn btn-info">View Description</a>
+            <button class="btn btn-success mt-2"
+              onclick="addToCart('paint', 'Paint', 200, 'https://nicpro.com/cdn/shop/products/1_3aecae74-9b76-4c4d-9470-4b0b5672a8b4.jpg?v=1624517783')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All Products Button -->
+    <div class="text-center mt-4">
+      <a href="all-products.html" class="btn btn-outline-primary btn-lg">View All Products</a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-black text-center py-4">
+  <div class="container">
+    <p>&copy; 2025 Drawing Tools Online Store</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  function addToCart(id, name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProduct = cart.find(item => item.id === id);
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.push({ id, name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

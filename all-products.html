@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products - Drawing Tools Online Store</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Drawing Tools Online Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="container my-5">
+  <h2 class="mb-4 text-center">All Products</h2>
+  <div class="row">
+
+    <!-- Product Cards (10 items) -->
+    <!-- 1. Pencil -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://images.ctfassets.net/f1fikihmjtrp/6ATHjUkrvbX9lQkdrdoIK9/28eab3f94b19d9c8756906cd9f63bfdf/22220-2009-5-4ww.jpg?q=80&w=500&h=500&fit=pad" class="card-img-top" alt="Pencil">
+        <div class="card-body">
+          <h5 class="card-title">Pencil</h5>
+          <p class="card-text">₱50.00</p>
+          <a href="product.html?id=pencil" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('pencil', 'Pencil', 50,  'https://images.ctfassets.net/f1fikihmjtrp/6ATHjUkrvbX9lQkdrdoIK9/28eab3f94b19d9c8756906cd9f63bfdf/22220-2009-5-4ww.jpg?q=80&w=500&h=500&fit=pad')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Marker -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://i5.walmartimages.com/seo/Best-Choice-Products-Set-of-228-Alcohol-Based-Markers-Dual-Tipped-Pens-w-Brush-Chisel-Tip-Carrying-Case-Black_731be2d0-b845-4b98-a4dc-4794cd580538.28f405136692d3a0913c6a3c31001f9b.jpeg" class="card-img-top" alt="Marker">
+        <div class="card-body">
+          <h5 class="card-title">Marker</h5>
+          <p class="card-text">₱100.00</p>
+          <a href="product.html?id=marker" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('marker', 'Marker', 100, 'https://i5.walmartimages.com/seo/Best-Choice-Products-Set-of-228-Alcohol-Based-Markers-Dual-Tipped-Pens-w-Brush-Chisel-Tip-Carrying-Case-Black_731be2d0-b845-4b98-a4dc-4794cd580538.28f405136692d3a0913c6a3c31001f9b.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Paint -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://nicpro.com/cdn/shop/products/1_3aecae74-9b76-4c4d-9470-4b0b5672a8b4.jpg?v=1624517783" class="card-img-top" alt="Paint">
+        <div class="card-body">
+          <h5 class="card-title">Paint</h5>
+          <p class="card-text">₱200.00</p>
+          <a href="product.html?id=paint" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('paint', 'Paint', 200, 'https://nicpro.com/cdn/shop/products/1_3aecae74-9b76-4c4d-9470-4b0b5672a8b4.jpg?v=1624517783')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Sketchbook -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://down-ph.img.susercontent.com/file/ph-11134207-7r98z-lzlrpvbmnsl67b" class="card-img-top" alt="Sketchbook">
+        <div class="card-body">
+          <h5 class="card-title">Sketchbook</h5>
+          <p class="card-text">₱150.00</p>
+          <a href="product.html?id=sketchbook" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('sketchbook', 'Sketchbook', 150, 'https://down-ph.img.susercontent.com/file/ph-11134207-7r98z-lzlrpvbmnsl67b')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Colored Pencils -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://projectworkshopph.com/cdn/shop/files/PrismacolorColoredPencils48.v02.png?v=1694976730" class="card-img-top" alt="Colored Pencils">
+        <div class="card-body">
+          <h5 class="card-title">Colored Pencils</h5>
+          <p class="card-text">₱250.00</p>
+          <a href="product.html?id=colored" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('colored', 'Colored Pencils', 250, 'https://projectworkshopph.com/cdn/shop/files/PrismacolorColoredPencils48.v02.png?v=1694976730')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Watercolor -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILinDvV9bSzZmIBjVVOjYsqtA2bbXbFWNjQ&s" class="card-img-top" alt="Watercolor">
+        <div class="card-body">
+          <h5 class="card-title">Watercolor</h5>
+          <p class="card-text">₱300.00</p>
+          <a href="product.html?id=watercolor" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('watercolor', 'Watercolor', 300, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILinDvV9bSzZmIBjVVOjYsqtA2bbXbFWNjQ&s')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Ruler -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_2.625,f_auto,h_214,q_auto,w_380/c_pad,h_214,w_380/F3006613-01?pgw=1" class="card-img-top" alt="Ruler">
+        <div class="card-body">
+          <h5 class="card-title">Ruler</h5>
+          <p class="card-text">₱30.00</p>
+          <a href="product.html?id=ruler" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('ruler', 'Ruler', 30, 'https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_2.625,f_auto,h_214,q_auto,w_380/c_pad,h_214,w_380/F3006613-01?pgw=1')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Eraser -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://hbw.ph/wp-content/uploads/2019/05/E-05-Eraser.jpg" class="card-img-top" alt="Eraser">
+        <div class="card-body">
+          <h5 class="card-title">Eraser</h5>
+          <p class="card-text">₱25.00</p>
+          <a href="product.html?id=eraser" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('eraser', 'Eraser', 25, 'https://hbw.ph/wp-content/uploads/2019/05/E-05-Eraser.jpg')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Blending Stump -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://projectworkshopph.com/cdn/shop/products/217917323_856748785260300_5880816401417104150_n.jpg?v=1626964144" class="card-img-top" alt="Blending Stump">
+        <div class="card-body">
+          <h5 class="card-title">Blending Stump</h5>
+          <p class="card-text">₱40.00</p>
+          <a href="product.html?id=blender" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('blender', 'Blending Stump', 40, 'https://projectworkshopph.com/cdn/shop/products/217917323_856748785260300_5880816401417104150_n.jpg?v=1626964144')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Canvas Pad -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81GugHwG4IL._AC_SL1500_.jpg" class="card-img-top" alt="Canvas Pad">
+        <div class="card-body">
+          <h5 class="card-title">Canvas Pad</h5>
+          <p class="card-text">₱350.00</p>
+          <a href="product.html?id=canvas" class="btn btn-info">View Description</a>
+          <button class="btn btn-success mt-2" onclick="addToCart('canvas', 'Canvas Pad', 350, 'https://m.media-amazon.com/images/I/81GugHwG4IL._AC_SL1500_.jpg')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer bg-dark text-black text-center py-4">
+  <div class="container">
+    <p>&copy; 2025 Drawing Tools Online Store</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  function addToCart(id, name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProduct = cart.find(item => item.id === id);
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.push({ id, name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

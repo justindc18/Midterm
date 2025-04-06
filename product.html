@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <a href="index.html" class="btn btn-secondary mb-3">&larr; Back to Store</a>
+        <div id="productDetails" class="card p-4">
+            <!-- Dynamic content goes here -->
+        </div>
+    </div>
+
+    <script>
+        const products = {
+            pencil: {
+                name: "Pencil",
+                price: "₱50.00",
+                image: "https://images.ctfassets.net/f1fikihmjtrp/6ATHjUkrvbX9lQkdrdoIK9/28eab3f94b19d9c8756906cd9f63bfdf/22220-2009-5-4ww.jpg?q=80&w=500&h=500&fit=pad",
+                description: "This is a high-quality pencil perfect for drawing and sketching."
+            },
+            marker: {
+                name: "Marker",
+                price: "₱100.00",
+                image: "https://i5.walmartimages.com/seo/Best-Choice-Products-Set-of-228-Alcohol-Based-Markers-Dual-Tipped-Pens-w-Brush-Chisel-Tip-Carrying-Case-Black_731be2d0-b845-4b98-a4dc-4794cd580538.28f405136692d3a0913c6a3c31001f9b.jpeg",
+                description: "This is a high-quality marker perfect for highlighting your drawings."
+            },
+            paint: {
+                name: "Paint",
+                price: "₱200.00",
+                image: "https://nicpro.com/cdn/shop/products/1_3aecae74-9b76-4c4d-9470-4b0b5672a8b4.jpg?v=1624517783",
+                description: "This is a high-quality paint perfect for coloring and designing your drawings."
+            },
+            sketchbook: {
+                name: "Sketchbook",
+                price: "₱150.00",
+                image: "https://down-ph.img.susercontent.com/file/ph-11134207-7r98z-lzlrpvbmnsl67b",
+                description: "A premium sketchbook ideal for both beginners and professionals."
+            },
+            colored: {
+                name: "Colored Pencils",
+                price: "₱250.00",
+                image: "https://projectworkshopph.com/cdn/shop/files/PrismacolorColoredPencils48.v02.png?v=1694976730",
+                description: "Vibrant and smooth colored pencils for detailed artwork."
+            },
+            watercolor: {
+                name: "Watercolor",
+                price: "₱300.00",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILinDvV9bSzZmIBjVVOjYsqtA2bbXbFWNjQ&s",
+                description: "High-quality watercolor set perfect for all your painting needs."
+            },
+            ruler: {
+                name: "Ruler",
+                price: "₱30.00",
+                image: "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_2.625,f_auto,h_214,q_auto,w_380/c_pad,h_214,w_380/F3006613-01?pgw=1",
+                description: "Durable and precise ruler for all your measurements."
+            },
+            eraser: {
+                name: "Eraser",
+                price: "₱25.00",
+                image: "https://hbw.ph/wp-content/uploads/2019/05/E-05-Eraser.jpg",
+                description: "Soft eraser that cleanly removes pencil marks without tearing paper."
+            },
+            stump: {
+                name: "Blending Stump",
+                price: "₱40.00",
+                image: "https://projectworkshopph.com/cdn/shop/products/217917323_856748785260300_5880816401417104150_n.jpg?v=1626964144",
+                description: "Perfect for blending and shading your pencil or charcoal artwork."
+            },
+            canvas: {
+                name: "Canvas Pad",
+                price: "₱350.00",
+                image: "https://m.media-amazon.com/images/I/81GugHwG4IL._AC_SL1500_.jpg",
+                description: "Premium canvas pad for acrylic and oil painting."
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        const product = products[productId];
+        if (product) {
+            document.getElementById('productDetails').innerHTML = `
+                <h2>${product.name}</h2>
+                <img src="${product.image}" alt="${product.name}" class="img-fluid mb-3" style="max-height: 300px;">
+                <p><strong>Price:</strong> ${product.price}</p>
+                <p>${product.description}</p>
+                <button class="btn btn-success" onclick="addToCart('${productId}', '${product.name}', ${parseFloat(product.price.replace('₱', ''))}, '${product.image}')">Add to Cart</button>
+            `;
+        } else {
+            document.getElementById('productDetails').innerHTML = `
+                <div class="alert alert-danger">Product not found.</div>
+            `;
+        }
+
+        function addToCart(id, name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, image, quantity: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} has been added to your cart.`);
+        }
+    </script>
+</body>
+</html>
